@@ -1,0 +1,47 @@
+---
+title: "shinyconverter"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{shinyconverter}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Introduction
+shinyconverter is an R package that provides functions to convert distances, weights, and temperatures between different units. It also includes a Shiny app that demonstrates how to use these functions in a web-based interface.
+
+In this vignette, we will walk through examples of using the shinyconverter package's functions and running the Shiny app.
+```{r setup}
+library(shinyconverter)
+```
+# Convert distances
+To convert distances between different units, use the convert_distance function. For example, to convert 1 kilometer to miles:
+```{r}
+# Convert 1 kilometer to miles
+convert_distance(1, "km", "mi")
+
+```
+# Convert weights
+To convert weights between different units, use the convert_weight function. For example, to convert 1 kilogram to pounds:
+```{r}
+# Convert 1 kilogram to pounds
+convert_weight(1, "kg", "lb")
+```
+# Convert temperatures
+To convert temperatures between different units, use the convert_temperature function. For example, to convert 0 degrees Celsius to degrees Fahrenheit:
+```{r}
+# Convert 0 degrees Celsius to degrees Fahrenheit
+convert_temperature(0, "C", "F")
+
+```
+# Running the Shiny app
+shinyconverter includes a Shiny app that demonstrates how to use these functions in a web-based interface. To run the Shiny app, use the following code:
+```{r}
+shiny::runApp(system.file("shinyapp", package = "shinyconverter"))
+```
